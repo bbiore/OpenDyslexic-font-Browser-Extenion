@@ -1,0 +1,38 @@
+/* The font is registered under its own family name so it never clashes with a
+   site that ships its own copy of OpenDyslexic. */
+@font-face {
+  font-family: "OpenDyslexic Ext";
+  src: url("chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexic-Regular.otf") format("opentype");
+  font-weight: 100 549;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OpenDyslexic Ext";
+  src: url("chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexic-Bold.otf") format("opentype");
+  font-weight: 550 950;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OpenDyslexic Ext";
+  src: url("chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexic-Italic.otf") format("opentype");
+  font-weight: 100 549;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OpenDyslexic Ext";
+  src: url("chrome-extension://__MSG_@@extension_id__/fonts/OpenDyslexic-BoldItalic.otf") format("opentype");
+  font-weight: 550 950;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* content.js marks each element whose own font is safe to replace (not an
+   icon font, not code) with data-odx, and turns the whole thing on or off with
+   the data-odx-on attribute on <html>. The font list keeps the page's script
+   fallbacks working for characters OpenDyslexic does not cover. */
+html[data-odx-on] [data-odx] {
+  font-family: "OpenDyslexic Ext", system-ui, sans-serif !important;
+}

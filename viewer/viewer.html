@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF in OpenDyslexic</title>
+  <link rel="icon" href="../icons/icon32.png">
+  <link rel="stylesheet" href="textlayer.css">
+  <link rel="stylesheet" href="viewer.css">
+</head>
+<body data-mode="od">
+  <header id="toolbar">
+    <div class="group grow">
+      <img src="../icons/icon32.png" alt="" width="20" height="20">
+      <span id="docTitle">OpenDyslexic PDF viewer</span>
+    </div>
+
+    <div class="group" role="radiogroup" aria-label="Font">
+      <div class="segmented">
+        <button type="button" data-set-mode="od" title="Pages as printed, text in OpenDyslexic (D)">OpenDyslexic</button>
+        <button type="button" data-set-mode="read" title="Text only, reflowed for reading (R)">Reading view</button>
+        <button type="button" data-set-mode="original" title="The PDF exactly as it is (O)">Original</button>
+      </div>
+    </div>
+
+    <div class="group" id="zoomControls">
+      <button type="button" id="zoomOut" class="icon" title="Zoom out (−)">−</button>
+      <span id="zoomValue">100%</span>
+      <button type="button" id="zoomIn" class="icon" title="Zoom in (+)">+</button>
+    </div>
+
+    <div class="group" id="readControls">
+      <button type="button" id="textSmaller" class="icon" title="Smaller text">A−</button>
+      <button type="button" id="textBigger" class="icon" title="Bigger text">A+</button>
+      <select id="spacing" title="Line spacing">
+        <option value="1.5">Spacing 1.5</option>
+        <option value="1.8">Spacing 1.8</option>
+        <option value="2.1">Spacing 2.1</option>
+      </select>
+      <select id="tint" title="Background">
+        <option value="cream">Cream</option>
+        <option value="white">White</option>
+        <option value="blue">Blue</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+
+    <div class="group">
+      <label class="button" title="Open a PDF from your computer">
+        Open…<input type="file" id="fileInput" accept="application/pdf,.pdf" hidden>
+      </label>
+      <button type="button" id="download" title="Save the original PDF" disabled>Save</button>
+      <button type="button" id="showOriginal" title="Open this PDF in Brave's own viewer" hidden>Brave viewer</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="status" role="status"></div>
+    <div id="empty" hidden>
+      <div class="drop">
+        <p class="big">Drop a PDF here</p>
+        <p>or use <strong>Open…</strong> above. PDFs you open on the web come here automatically.</p>
+      </div>
+    </div>
+    <div id="pages"></div>
+    <article id="reader"></article>
+  </main>
+
+  <script src="viewer.js" type="module"></script>
+</body>
+</html>

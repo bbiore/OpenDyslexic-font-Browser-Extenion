@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OpenDyslexic</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon32.png" alt="" width="24" height="24">
+    <h1>OpenDyslexic</h1>
+  </header>
+
+  <section>
+    <label class="row">
+      <span class="text">
+        <span class="label">Websites</span>
+        <span class="hint">Use OpenDyslexic on every site</span>
+      </span>
+      <input type="checkbox" id="enabled" class="switch">
+    </label>
+
+    <label class="row" id="siteRow">
+      <span class="text">
+        <span class="label">This site</span>
+        <span class="hint" id="siteName">–</span>
+      </span>
+      <input type="checkbox" id="site" class="switch">
+    </label>
+  </section>
+
+  <section>
+    <label class="row">
+      <span class="text">
+        <span class="label">PDFs</span>
+        <span class="hint">Open PDFs in OpenDyslexic automatically</span>
+      </span>
+      <input type="checkbox" id="pdfAutoOpen" class="switch">
+    </label>
+    <button id="pdfAction" type="button">Open a PDF from your computer</button>
+  </section>
+
+  <details>
+    <summary>More options</summary>
+    <label class="row">
+      <span class="text">
+        <span class="label">Keep code font</span>
+        <span class="hint">Leave code blocks in their monospace font</span>
+      </span>
+      <input type="checkbox" id="keepCode" class="switch">
+    </label>
+    <p class="hint">Shortcut: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> turns the font on or off for the current site.</p>
+  </details>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
